@@ -1,6 +1,6 @@
 import React from 'react';
-import './index.css';
 import PropTypes from 'prop-types';
+import './index.css';
 
 const Input = props => {
   const { className, placeholder, type, name, onChange, value, id } = props;
@@ -24,6 +24,6 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default Input;
