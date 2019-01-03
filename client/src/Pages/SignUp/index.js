@@ -50,19 +50,19 @@ const SignUp = () => (
       <Button
         id="social-signin-facebook"
         className="social-signin facebook"
-        value="Log up with facebook"
+        value="Sign up with facebook"
         onClick={() => signUpByFacebook()}
       />
       <Button
         id="social-signin-twitter"
         className="social-signin twitter"
-        value="Log up with Twitter"
+        value="Sign up with Twitter"
         onClick={() => signUpByTwitter()}
       />
       <Button
         id="social-signin-google"
         className="social-signin google"
-        value="Log up with Google+"
+        value="Sign up with Google+"
         onClick={() => signUpByGoogle()}
       />
     </div>
