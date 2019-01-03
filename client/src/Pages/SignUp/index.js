@@ -13,7 +13,7 @@ const signUpByGoogle = () => {};
 /* onChange props under development */
 
 const SignUp = () => (
-  <div id="login-box">
+  <div id="signIn-box" className="signIn-box">
     <div className="left">
       <h1 className="signUpTitle">Sign up</h1>
       <Input
@@ -50,19 +50,19 @@ const SignUp = () => (
       <Button
         id="social-signin-facebook"
         className="social-signin facebook"
-        value="Log up with facebook"
+        value="Sign up with facebook"
         onClick={() => signUpByFacebook()}
       />
       <Button
         id="social-signin-twitter"
         className="social-signin twitter"
-        value="Log up with Twitter"
+        value="Sign up with Twitter"
         onClick={() => signUpByTwitter()}
       />
       <Button
         id="social-signin-google"
         className="social-signin google"
-        value="Log up with Google+"
+        value="Sign up with Google+"
         onClick={() => signUpByGoogle()}
       />
     </div>

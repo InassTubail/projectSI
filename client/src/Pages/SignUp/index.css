@@ -4,14 +4,12 @@ body {
   background: #ddd;
   font-size: 16px;
   color: #222;
-  /* background-image: url("https://pre00.deviantart.net/ed81/th/pre/i/2011/109/8/8/background_m3_login_for_m1_by_andreascy-d3ecbzg.jpg"); */
   background-image: url("http://ultraimg.com/images/Ho6hQWs.jpg");
   background-size: cover;
   background-position: center;
   font-weight: 300;
 }
-
-#login-box {
+.signIn-box {
   position: relative;
   margin: 10% auto;
   width: 600px;
@@ -58,6 +56,8 @@ input[type="submit"] {
 }
 .submitOrSignUp a {
   color: white;
+  text-decoration: underline;
+  margin-bottom: 15px;
 }
 input[type="submit"]:hover,
 input[type="submit"]:focus {
