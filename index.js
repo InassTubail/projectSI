@@ -1,30 +1,24 @@
+require('env2')('./config.env');
 const express = require('express');
 const path = require('path');
+const controllers = require('./controllers');
+
 const app = express();
+const port = process.env.PORT || 4000;
 
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use('/api/v1',controllers);
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// For deployment, etc: Heroku.
+if (process.env.NODE_ENV === 'production') {
+  // # npm run build #
+  // Serve build version of the app.
+  app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+  // Return all requests to our React app.
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+  });
+}
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.get('/api/v1/news', (req, res, next) => {
-  const item = {
-    id: 1,
-    main_headline: 'Here is the news',
-    details: {
-      blurb: 'Loads of news Loads of news Loads of news Loads of news Loads of news Loads of news',
-      more_details: 'info.txt'
-    }
-  }
-  news = { posts: [item, item, item, item] }
-  return res.json(news)
-})
-
-app.listen(process.env.PORT || 9000);
+module.exports = app;
