@@ -15,7 +15,7 @@ const signUpByGoogle = () => {};
 const SignUp = () => (
   <div id="login-box">
     <div className="left">
-      <h1>Sign up</h1>
+      <h1 className="signUpTitle">Sign up</h1>
       <Input
         id="username"
         className="username"
@@ -44,14 +44,6 @@ const SignUp = () => (
         name="password2"
         placeholder="Retype password"
       />
-      <Input
-        id="signup_submit"
-        className="signup_submit"
-        type="submit"
-        name="signup_submit"
-        placeholder="signup_submit"
-        value="Sign me up"
-      />
     </div>
 
     <div className="right">
@@ -75,6 +67,18 @@ const SignUp = () => (
       />
     </div>
     <div className="or">OR</div>
+
+    <div className="submitOrSignUp">
+      <Input
+        id="signup_submit"
+        className="signup_submit"
+        type="submit"
+        name="signup_submit"
+        placeholder="signup_submit"
+        value="Sign me up"
+      />
+      <a>Already have an account? Sign In</a>
+    </div>
   </div>
 );
 export default SignUp;
