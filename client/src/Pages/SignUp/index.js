@@ -13,7 +13,7 @@ const signUpByGoogle = () => {};
 /* onChange props under development */
 
 const SignUp = () => (
-  <div id="login-box">
+  <div id="signIn-box" className="signIn-box">
     <div className="left">
       <h1 className="signUpTitle">Sign up</h1>
       <Input
